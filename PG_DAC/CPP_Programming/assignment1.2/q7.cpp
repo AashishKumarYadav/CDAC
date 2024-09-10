@@ -1,4 +1,4 @@
-// 6. WAP for finding sum of all odd numbers till 20.
+// 7. WAP for finding sum of all odd numbers till 20.
 
 #include<bits/stdc++.h>
 using namespace std;
