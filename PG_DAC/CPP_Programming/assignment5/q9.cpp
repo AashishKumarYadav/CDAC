@@ -15,7 +15,7 @@ int sizee(string str){
 
 int main(){
 
-    string str = "WHAT IS YOUR NAME?";
+    string str = "WHAT is YOUR NAME?";
 
     int ssize = sizee(str);
 

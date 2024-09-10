@@ -1,28 +1,36 @@
-//7. Write a program to find a substring within a string. If found display its starting position.
+//7. Write a program to find a substring within a string. If found display its starting position. (Using Pointer)
 
 #include<bits/stdc++.h>
 using namespace std;
 
-int sizee(string str){
+int sizee(char *ptr){
+
     int cnt = 0;
 
-    for(int i=0;str[i]!='\0';i++){
+    while(*ptr!='\0'){
         cnt++;
+        ptr++;
     }
 
     return cnt;
 }
 
-int findSubstring(string str, string subStr){
-    int sizee1 = sizee(str);
-    int sizee2 = sizee(subStr);
+int findSubstring(char str[],char subStr[]){
+
+    char *ptr1 = str;
+    char *ptr2 = subStr;
+
+    int sizee1 = sizee(ptr1);
+    int sizee2 = sizee(ptr2);
 
     for(int i=0;i<=sizee1-sizee2;i++){
 
         int j;
         
         for(j = 0; j < sizee2; j++) {
-            if(str[i + j] != subStr[j]){
+            ptr1 = str+i+j;
+            ptr2 = subStr+j;
+            if(*ptr1 != *ptr2){
                 break;
             }
         }
@@ -36,13 +44,8 @@ int findSubstring(string str, string subStr){
 }
 
 int main() {
-    string mainStr, subStr;
-
-    cout << "Enter the main string: ";
-    getline(cin,mainStr);
-
-    cout << "Enter the substring: ";
-    getline(cin,subStr);
+    char mainStr[] = "Hello world";
+    char subStr[] = "world";
 
     int position = findSubstring(mainStr, subStr);
 
@@ -57,9 +60,6 @@ int main() {
 
 
 /*
-input - 
-Enter the main string: welcome back
-Enter the substring: come
 output -
-Substring found at position: 3
+Substring found at position: 6
 */

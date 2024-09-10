@@ -3,11 +3,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
+int solve(int num){
 
-    int num; cin>>num;
-
-    int n = num;
     int revNumSum = 0;
 
     while(num>0){
@@ -17,7 +14,18 @@ int main(){
         num /= 10;
     }
 
-    if(n == revNumSum){
+    return revNumSum;
+}
+
+int main(){
+
+    int num; cin>>num;
+
+    int n = num;
+
+    int revNum = solve(num);
+
+    if(n == revNum){
         cout<<"palindrome"<<endl;
     }
     else{
